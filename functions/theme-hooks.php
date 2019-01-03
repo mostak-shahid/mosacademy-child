@@ -10,6 +10,7 @@
 //  remove_action( 'action_contact_page_form', 'form_generator', 10 );
 //  remove_action( 'action_team_archive_page', 'team_archive_page_fnc', 10 );
 // }
+add_action( 'init', 'child_text_layout_manager' );
 function child_text_layout_manager () {
     global $mosacademy_options;
     //Custom Service
