@@ -8,8 +8,8 @@ function child_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
 
 require_once('functions/config.php');
-//require_once(get_template_directory() . '/functions/array.php');
-//require_once('functions/array.php');
+require_once(get_template_directory() . '/functions/array.php');
+require_once('functions/array.php');
 // require_once('functions/post-types.php');
 // require_once('functions/taxonomy.php');
 // require_once('functions/metaboxes.php');
