@@ -11,56 +11,56 @@ function add_dumketo_theme_functions($sections){
     //     'icon'             => 'el el-move'
     // );
     $sections[] = array(
-        'title'            => __( 'Menu Section', 'redux-framework-demo' ),
-        'id'               => 'sections-menu',
+        'title'            => __( 'Partner Section', 'redux-framework-demo' ),
+        'id'               => 'sections-partner',
         'desc'             => '',
         'customizer_width' => '450px',
         'subsection' => true,
         'icon'             => 'el el-move',
         'fields'     => array(
             array(
-                'id'       => 'sections-menu-text-layout',
+                'id'       => 'sections-partner-text-layout',
                 'type'     => 'radio',
                 'title'    => __( 'Inner Content Width', 'redux-framework-demo' ),
                 'options'  => $container_list,
                 'default'  => 'container'
             ),
             array(
-                'id'             => 'sections-menu-padding',
+                'id'             => 'sections-partner-padding',
                 'type'           => 'spacing',
                 'mode'           => 'padding',
                 'all'            => false,
                 'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
                 'units_extended' => 'true',
-                'output'         => array( '#section-menu .content-wrap' ),
+                'output'         => array( '#section-partner .content-wrap' ),
                 'title'          => __( 'Section Padding', 'redux-framework-demo' ),
             ),  
             array(
-                'id'             => 'sections-menu-margin',
+                'id'             => 'sections-partner-margin',
                 'type'           => 'spacing',
                 'mode'           => 'margin',
                 'all'            => false,
                 'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
                 'units_extended' => 'true',
-                'output'         => array( '#section-menu .content-wrap' ),
+                'output'         => array( '#section-partner .content-wrap' ),
                 'title'          => __( 'Section Margin', 'redux-framework-demo' ),
             ),        
             array(
-                'id'       => 'sections-menu-border',
+                'id'       => 'sections-partner-border',
                 'type'     => 'border',
-                'title'    => __( 'Blank Section Border', 'redux-framework-demo' ),
-                'output'   => array( '#section-menu .content-wrap' ),
+                'title'    => __( 'Section Border', 'redux-framework-demo' ),
+                'output'   => array( '#section-partner .content-wrap' ),
                 'all'      => false,
             ),
             array(
-                'id'       => 'sections-menu-animation',
+                'id'       => 'sections-partner-animation',
                 'type'     => 'select',
                 'title'    => __( 'Animation Style for this section', 'redux-framework-demo' ),
                 'options'  => $animations,
                 'validate' => 'no_html',
             ),
             array(
-                'id'       => 'sections-menu-animation-delay',
+                'id'       => 'sections-partner-animation-delay',
                 'type'     => 'text',
                 'title'    => __( 'Animation Delay for this section', 'redux-framework-demo' ),
                 'subtitle' => __( 'This must be numeric.', 'redux-framework-demo' ),
@@ -69,9 +69,9 @@ function add_dumketo_theme_functions($sections){
                 'default'  => '0',
             ),
             array(
-                'id'       => 'sections-menu-title',
+                'id'       => 'sections-partner-title',
                 'type'     => 'text',
-                'title'    => __( 'Blank Section Title', 'redux-framework-demo' ),
+                'title'    => __( 'Section Title', 'redux-framework-demo' ),
                 'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br /&gt;) here.',
                 'validate'     => 'html_custom',
                 'allowed_html' => array(
@@ -86,7 +86,7 @@ function add_dumketo_theme_functions($sections){
                 )
             ),
             array(
-                'id'      => 'sections-menu-content',
+                'id'      => 'sections-partner-content',
                 'type'    => 'editor',
                 'title'   => __( 'Section Content', 'redux-framework-demo' ),
                 'args'    => array(
@@ -102,9 +102,9 @@ function add_dumketo_theme_functions($sections){
             ),
 
             array(
-                'id'       => 'sections-menu-background-type',
+                'id'       => 'sections-partner-background-type',
                 'type'     => 'button_set',
-                'title'    => __( 'Blank Background Type', 'redux-framework-demo' ),
+                'title'    => __( 'Background Type', 'redux-framework-demo' ),
                 'options'  => array(
                     '1' => 'Gradient',
                     '2' => 'Solid Color/Image',
@@ -114,32 +114,36 @@ function add_dumketo_theme_functions($sections){
             ),
 
             array(
-                'id'     => 'sections-menu-background-start',
+                'id'     => 'sections-partner-background-start',
                 'type'   => 'section',
                 'indent' => true, // Indent all options below until the next 'section' option is set.
             ),
             array(
-                'id'       => 'sections-menu-background-gradient',
+                'id'       => 'sections-partner-background-gradient',
                 'type'     => 'color_gradient',
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
-                'validate' => 'color',              
-                'required' => array( 'sections-menu-background-type', '=', '1' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
+                'validate' => 'color',  
+                'output'   => array( '#section-partner' ),            
+                'required' => array( 'sections-partner-background-type', '=', '1' ),
             ),
             array(
-                'id'       => 'sections-menu-background-solid',
+                'id'       => 'sections-partner-background-solid',
                 'type'     => 'background',                
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
-                'required' => array( 'sections-menu-background-type', '=', '2' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
+                'output'   => array( '#section-partner' ),
+                'required' => array( 'sections-partner-background-type', '=', '2' ),
             ),
             array(
-                'id'       => 'sections-menu-background-rgba',
+                'id'       => 'sections-partner-background-rgba',
                 'type'     => 'color_rgba',
-                'title'    => __( 'Blank Section Background', 'redux-framework-demo' ),
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
                 'validate' => 'colorrgba',
-                'required' => array( 'sections-menu-background-type', '=', '3' ),
+                'output'   => array( '#section-partner' ),
+                'mode'     => 'background',
+                'required' => array( 'sections-partner-background-type', '=', '3' ),
             ),
             array(
-                'id'     => 'sections-menu-background-end',
+                'id'     => 'sections-partner-background-end',
                 'type'   => 'section',
                 'indent' => false, // Indent all options below until the next 'section' option is set.
             ),
