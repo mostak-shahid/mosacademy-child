@@ -6,14 +6,14 @@ function mos_child_metaboxes() {
     $prefix = '_mosacademy_child_';
 
     $team_details = new_cmb2_box(array(
-        'id' => $prefix.'project_details',
-        'title' => __( 'Project Details', 'cmb2' ),
+        'id' => $prefix.'person_details',
+        'title' => __( 'Person Details', 'cmb2' ),
         'object_types'  => array( 'page' ), // Post type 
     )); 
     $team_field_id = $team_details->add_field( array(
-        'id'          => 'wiki_test_repeat_group',
+        'id'          => $prefix.'team_group',
         'type'        => 'group',
-        'description' => __( 'Generates reusable form entries', 'cmb2' ),
+        //'description' => __( 'Generates reusable form entries', 'cmb2' ),
         'options'     => array(
             'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
             'add_button'    => __( 'Add Another Entry', 'cmb2' ),
@@ -23,16 +23,21 @@ function mos_child_metaboxes() {
         ),
     ));
     $team_details->add_group_field( $team_field_id, array(
+        'name'    => 'Test File',
+        'desc'    => 'Upload an image or enter an URL.',
+        'id'      => 'person_image',
+        'type'    => 'file',
+    ));
+    $team_details->add_group_field( $team_field_id, array(
         'name' => 'Entry Title',
-        'id'   => 'title',
+        'id'   => 'person_title',
         'type' => 'text',
         //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
     ));  
     $team_details->add_group_field( $team_field_id, array(
         'name' => 'Description',
-        'description' => 'Write a short description for this entry',
-        'id'   => 'description',
-        'type' => 'textarea_small',
+        'id'   => 'person_description',
+        'type' => 'textarea',
     ));  
 }
 add_action('cmb2_admin_init', 'mos_child_metaboxes');
