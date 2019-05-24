@@ -1,9 +1,9 @@
 <?php
 // hook into the init action and call moslatest_taxonomies when it fires
-add_action( 'init', 'moslatest_portfolio_taxonomies', 0 );
+add_action( 'init', 'mos_child_taxonomies', 0 );
 
 // create two taxonomies, categories and tags for the post type "book"
-function moslatest_portfolio_taxonomies() {
+function mos_child_taxonomies() {
 	// Add new taxonomy, make it hierarchical (like categories)
 	$labels = array(
 		'name'              => _x( 'Categories', 'taxonomy general name', 'textdomain' ),

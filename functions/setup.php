@@ -1,14 +1,14 @@
 <?php
 //Add theme setup
-if ( ! function_exists( 'mosacademy_child_setup' ) ) :
-	function mosacademy_child_setup() {
+if ( ! function_exists( 'mos_child_setup' ) ) :
+	function mos_child_setup() {
 		//add_image_size( string $name, int $width, int $height, bool|array $crop = false );
 		register_nav_menus( array(
 			'bottommenu' => __('Bottom Menu', 'moslatest'),
 		));
 	}
 endif;
-add_action( 'after_setup_theme', 'mosacademy_child_setup' );
+add_action( 'after_setup_theme', 'mos_child_setup' );
 function custom_js () {
 	?>
 <script>
