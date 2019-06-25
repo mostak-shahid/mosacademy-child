@@ -6,9 +6,7 @@
 
 // add_action( 'wp_head', 'remove_theme_actions' );
 // function remove_theme_actions () {
-//  remove_action( 'action_contact_page_form', 'contact_info', 5 );
-//  remove_action( 'action_contact_page_form', 'form_generator', 10 );
-//  remove_action( 'action_team_archive_page', 'team_archive_page_fnc', 10 );
+//     remove_action( 'action_above_header', 'small_device_logo_fnc' );
 // }
 add_action( 'init', 'child_text_layout_manager' );
 function child_text_layout_manager () {
